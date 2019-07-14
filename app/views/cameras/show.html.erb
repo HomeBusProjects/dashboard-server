@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @camera.name %>
+</p>
+
+<p>
+  <strong>Homebus uuid:</strong>
+  <%= @camera.homebus_uuid %>
+</p>
+
+<p>
+  <strong>Public:</strong>
+  <%= @camera.public %>
+</p>
+
+<%= link_to 'Edit', edit_camera_path(@camera) %> |
+<%= link_to 'Back', cameras_path %>

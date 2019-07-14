@@ -1,0 +1,32 @@
+<%= form_with(model: camera, local: true) do |form| %>
+  <% if camera.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(camera.errors.count, "error") %> prohibited this camera from being saved:</h2>
+
+      <ul>
+      <% camera.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :homebus_uuid %>
+    <%= form.text_field :homebus_uuid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :public %>
+    <%= form.text_field :public %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

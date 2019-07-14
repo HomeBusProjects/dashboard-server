@@ -1,0 +1,27 @@
+version: '3'
+services:
+  dashboard-postgres:
+    image: postgres:11.4
+    ports:
+      - "5432:5432"
+    networks: 
+      - dashboard-net 
+
+  dashboard-web:
+    build: .
+    command: ["bin/rails","server","-b","0.0.0.0","-p","3000"]
+    ports:
+      - "127.0.0.1:3000:3000"
+    links:
+      - dashboard-postgres
+    volumes:
+      - .:/app
+    environment:
+      DOCKER: docker
+      RAILS_ENV: development
+      RAILS_DOCKER: 1
+    networks: 
+      - dashboard-net 
+
+networks:
+  dashboard-net:
