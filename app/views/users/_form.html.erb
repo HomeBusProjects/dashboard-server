@@ -15,9 +15,11 @@
     <%= form.text_field :slack_uid %>
   </div>
 
-  <div class="field">
-    <%= form.text_field :admin %>
-  </div>
+  <%= form.form_group :admin do %>
+    <%= form.check_box :admin do %>
+      Admin?
+    <% end %>
+  <% end %>
 
   <div class="actions">
     <%= form.submit %>

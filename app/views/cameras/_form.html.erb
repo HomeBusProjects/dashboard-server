@@ -19,9 +19,11 @@
     <%= form.text_field :homebus_uuid %>
   </div>
 
-  <div class="field">
-    <%= form.text_field :public %>
-  </div>
+  <%= form.form_group :public do %>
+    <%= form.check_box :public do %>
+      Public?
+    <% end %>
+  <% end %>
 
   <div class="actions">
     <%= form.submit %>

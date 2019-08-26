@@ -1,0 +1,451 @@
+<div class="row">
+  <div class="col-lg-12 text-center">
+    <hr class="star-primary activity-bar">
+    <p id='last_updated'>Last updated: <span id='last_updated_container'></span></p>
+  </div>
+</div>
+
+<div class='row'>
+<% if @cameras.count > 0 %>
+  <div class='col'>
+    <h2>Cameras</h2>
+  </div>
+</div>
+
+<div class='row'>
+<% @cameras.each do |camera| %>
+  <div class='col-sm-3' id='russet-camera'>
+    <h4><a href='graph.html?uuid=<%= camera.uuid %>'><%= camera.name %></a></h4>
+    <img src='test-pattern.jpg' class='img-fluid img-thumbnail'>
+  </div>
+<% end %>
+
+	<div class='col-sm-3'>
+	  <h4>Unit 3</h4>
+	  <iframe src='https://video.nest.com/embedded/live/<%= nest_id %>?autoplay=1'>
+	  </iframe>
+	  </li>
+	</div>
+      </div>
+<% end %>
+
+<hr class='hr' />
+
+        <div class='row'>
+          <div class='col'>
+	    <h4>3D Printers</h4>
+          </div>
+        </div>
+
+
+        <div class='row'>
+
+<% @printers.each do |printer| %>
+          <div class='col' id='<%= printer.uuid %>'>
+	    <h5><a href='graph.html?uuid=<%= printer.uuid %>'><%= printer.name %></a></h5>
+	      <h6 class='status'></h6>
+  	      <div class='job' style='display: none'>
+		<ul>
+		  <li>Filename: <span class='filename'></span></li>
+		  <li>Progress: <span class='progress'><span>%</li>
+		  <li>Time Remaining: <span class='print-time'></span> of <span class='print-time-remaining'></span> sec</li>
+                </ul>
+	      </div>
+	      <table class='table'>
+		<tr><th>temp</th><th>actual</th><th>target</th></tr>
+		<tr><td>tool</td><td><span class='tool-temp'></span>°C</td><td><span class='tool-temp-target'></span>°C</td></tr>
+		<tr><td>bed</td><td><span class='bed-temp'></span>°C</td><td><span class='bed-temp-target'></span>°C</td></tr>
+	      </table>
+          </div>
+
+          <div class='col' id='dremel-cam'>
+	    <img src='test-pattern.jpg' class='img-fluid img-thumbnail'>
+	  </div>
+<% end %>
+
+        </div><!-- row -->
+
+	<hr class='hr' />
+
+      <div class='row'>
+      <div class='col'>
+	<h2>Rooms</h2>
+	<table class='table table-striped'>
+	  <tr>
+	    <td><a href='graph.html?uuid='>Unit 2</a></td><td><span id='unit2_temperature'></span>°C</td><td><span id='unit2_humidity'></span>%</td><td><span id='unit2_occupied'></span></td>
+	  </tr>
+	</table>
+      </div><!-- col -->
+
+      <div class='col'>
+	<h2>Facilities</h2>
+	<table class='table table-striped'>
+	  <tr>
+	    <td rowspan=2><a href='graph.html?uuid='>Network</a></td>
+	    <td>rx: <span id='network_rx'></span>ps</td>
+	    <td>tx: <span id='network_tx'></span>ps</td>
+	  </tr>
+	  <tr>
+	    <td>active hosts</td><td id='network_active'></td>
+	  </tr>
+	  <tr>
+	    <td>^H Sign</td>
+	    <td></td>
+	    <td></td>
+	  </tr>
+	  <tr>
+	    <td>Buckets</td>
+	    <td></td>
+	    <td></td>
+	  </tr>
+	  <tr>
+	    <td>Vendo LEDs</td>
+	    <td></td>
+	    <td></td>
+	  </tr>
+	  <tr>
+	    <td>LED strip</td>
+	    <td></td>
+	    <td></td>
+	  </tr>
+	  <tr>
+	    <td>Unit 2 Projector</td>
+	    <td id="unit2_projector_status"></td>
+	    <td></td>
+	  </tr>
+	  <tr>
+	    <td>Unit 3 Projector</td>
+	    <td id="unit3_projector_status"></td>
+	    <td></td>
+	  </tr>
+	  <tr>
+	    <td><a href='graph.html?uuid='>Vendo</a></td>
+	    <td><span id='vendo-temperature'></span>°C</td>
+	    <td><span id='vendo-humidity'></span>%</td>
+	  </tr>
+	  <tr>
+	    <td>Grill</td>
+	    <td></td>
+	    <td></td>
+	  </tr>
+	  <tr>
+	    <td>Freezer</td>
+	    <td></td>
+	    <td></td>
+	  </tr>
+	</table>
+        </div><!-- col -->
+
+        <div class='col'>
+          <h2><a href='graph.html?uuid='>Access</a></h2>
+          <ul id="access" class="list-group list-group-flush">
+	  </ul>
+        </div><!-- col -->
+      </div>
+
+
+    <div class='row'>
+      <div class='col'>
+        <h2><a href='graph.html?uuid='>Weather</a></h2>
+        <p id='weather'>
+        </p>
+      </div><!-- col -->
+
+      <div class='col'>
+        <h2>Air Quality</a></h2>
+        <p id='aqi'>
+        </p>
+      </div><!-- col -->
+
+      <div class='col'>
+	<h2><a href='graph.html?uuid=' class='printer-name'>Brother Printer</a></h>
+	<p class='printer-status'></p>
+	<p><span class='pages-printed'></span> pages printed</p>
+      </div><!-- col -->
+    </div><!-- row -->
+
+      <div class='row'>
+	<div class='col'>
+          <i>Want to hack this?</i> Source is at <a href='https://github.com/romkey/ctrlh-dashboard'>https://github.com/romkey/ctrlh-dashboard</a>
+        </div>
+      </div>
+  </div>
+</div>
+
+<!-- from https://www.cloudmqtt.com/docs/websocket.html -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.1.0/paho-mqtt.min.js' type='text/javascript'></script>
+<script src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.6.7/jquery.timeago.min.js' integrity='sha384-bIExnxLHdrb4/5cUciUyC490hqkTPFw6V1eUbG0gpKQ67B3dsT6KOdXvl5RycCM6' crossorigin='anonymous'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' crossorigin='anonymous'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous'></script>
+
+<script type='text/javascript'>
+// we loaded the credentials in separate JS
+// this is still not at all secure but it allows us to decouple management of this page and its content	    
+// from management of the credentials, and lets us not check them into Github
+// (despite the fact that they're flapping in the window here on the web)
+// they should be for an account with read-only access only to the topic used for the hydroponics
+//  var credentials = new CTLHProjectorMQTT();
+
+client = new Paho.Client(credentials.MQTT_SERVER, credentials.MQTT_PORT, credentials.MQTT_UUID + new Date().getTime());
+client.onConnectionLost = onConnectionLost;
+client.onMessageArrived = onMessageArrived;
+mqtt_connect();
+
+
+function onConnect() {
+  console.log("onConnect");
+  client.subscribe('/network/bandwidth'); 
+  client.subscribe('/network/active_hosts');
+//  client.subscribe('/furball');
+  client.subscribe('/projectors'); 
+  client.subscribe('/door'); 
+  client.subscribe('/weather/current'); 
+  client.subscribe('/printer'); 
+  client.subscribe('/irc'); 
+  client.subscribe('/aqi'); 
+}
+
+function mqtt_connect() {
+  var options = {
+    useSSL: false,
+    userName: credentials.MQTT_USERNAME,
+    password: credentials.MQTT_PASSWORD,
+    onSuccess:onConnect,
+    onFailure:doFail,
+    reconnect: true
+  };
+
+console.log("mqtt connect");
+  client.connect(options); 
+}
+
+function doFail(e) {
+  console.log(e);
+
+console.log("doFail");
+}
+
+function onConnectionLost(responseObject) {
+  if(responseObject.errorCode !== 0) {
+    console.log("onConnectionLost:"+responseObject.errorMessage);
+  }
+
+  console.log("connection lost");
+}
+
+// shamelessly taken from https://stackoverflow.com/questions/15900485/correct-way-to-convert-size-in-bytes-to-kb-mb-gb-in-javascript
+function formatBytes(bytes, decimals = 2) {
+  if (bytes === 0) return '0 Bytes';
+
+  const k = 1024;
+  const dm = decimals < 0 ? 0 : decimals;
+  const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
+
+  return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+}
+
+function onMessageArrived(message) {
+  $('.activity-bar').addClass('hr-green');
+  setTimeout(function () {
+    $('.activity-bar').removeClass('hr-green');
+  }, 1000);
+
+//  console.log('onMessageArrived:' + message.payloadString);
+  console.log('topic is ' + message.destinationName);
+
+  data = JSON.parse(message.payloadString);
+  if(data["timestamp"])  {
+    $('#last_updated_container').html(getTimeagostamp(data["timestamp"]));
+    activateTimeago();
+  }
+
+  if(message.destinationName == '/network/bandwidth') 
+    onNetworkBandwidth(message); 
+
+  if(message.destinationName == '/network/active_hosts')
+    onNetworkActive(message);
+
+ if(message.destinationName == '/projectors') 
+    onProjectors(message); 
+
+ if(message.destinationName == '/door') 
+    onDoor(message); 
+
+ if(message.destinationName == '/weather/current') 
+    onWeather(message); 
+
+ if(message.destinationName == '/printer') 
+    onPrinter(message); 
+
+ if(message.destinationName == '/irc') 
+    onIRC(message); 
+
+ if(message.destinationName == '/aqi') 
+    onAQI(message); 
+
+
+  cameras.forEach(function(item, index) {
+    if(message.destinationName == '/homebus/device/' + item['uuid'])
+      onCamera(message, item['container']);
+  });
+}
+
+
+function onNetworkBandwidth(message) {
+  var network = JSON.parse(message.payloadString);
+
+  $("#network_rx").text(formatBytes(Number(network["bandwidth"]["rx_bps"])));
+  $("#network_tx").text(formatBytes(Number(network["bandwidth"]["tx_bps"])));
+}
+
+function onNetworkActive(message) {
+  var network = JSON.parse(message.payloadString);
+
+  $("#network_active").text(network["active_hosts"]["arp_table_length"]);
+}
+
+function onFurball(message, unit) {
+  var furball = JSON.parse(message.payloadString);
+
+  $("#" + unit + "_temperature").text(furball["environment"]["temperature"]); 
+  $("#" + unit + "_humidity").text(furball["environment"]["humidity"]); 
+  $("#" + unit + "_occupied").text(furball["presence"] ? "y" : "n");
+}
+
+function onProjectors(message) {
+  var projectors = JSON.parse(message.payloadString); 
+
+  if(projectors["name"] == "Unit 2")
+    id = "#unit2_projector_status";
+
+  if(projectors["name"] == "Unit 3")
+    id = "#unit3_projector_status";
+
+  $(id).text(projectors["status"]);
+}
+
+function getTimeagostamp(timestamp) {
+  var d = new Date(Number(timestamp)*1000); 
+  return "<time class='timeago' datetime='" + d.toISOString() + "' title='" + d.toLocaleString() + "'></time>";
+}
+
+function activateTimeago() {
+  $('.timeago').timeago(); 
+}
+
+function onDoor(message) {
+  var door = JSON.parse(message.payloadString);
+  var access = door["access"];
+
+  if(!access || access["message"] ||onDoor.last_door_msg == message.payloadString)
+    return;
+
+console.log(onDoor.last_door_msg, message);
+  onDoor.last_door_msg = message.payloadString;
+
+  $("#access").prepend("<li class='list-group-item'>" + access["person"] + " " + access["action"] + " " + access["unit"] + " " + access["door"] + "<br/>" + getTimeagostamp(door["timestamp"]) + "</li>");
+  activateTimeago(); 
+}
+
+function onWeather(message) {
+  var w = JSON.parse(message.payloadString);
+
+  $("#weather").html(w["weather"]["conditions_short"] + ": " + w["weather"]["temperature"] + "°C, " + w["weather"]["humidity"] + "%, " + w["weather"]["conditions_long"] + "<br/>" + getTimeagostamp(w["timestamp"]));
+  activateTimeago(); 
+}
+
+function onPrinter(message) {
+  var printer = JSON.parse(message.payloadString);
+  var system = printer["system"];
+  var status = printer["status"];
+
+  $(".printer-name").text(system["model"]); 
+  $(".printer-status").text(status["status"]); 
+  $(".pages-printed").text(status["total_page_count"]);
+}
+
+function onIRC(message) {
+  var msg = JSON.parse(message.payloadString);
+
+  if(onIRC.last_irc_msg == message.payloadString)
+    return;
+
+  onIRC.last_irc_msg = message.payloadString; 
+
+  $('#irc').prepend("<li class='list-group-item'>" + msg["message"]["nick"] +  ": " + msg["message"]["message"] + "<br/>" + getTimeagostamp(msg["timestamp"]) + "</li>");
+  activateTimeago(); 
+}
+
+function onAQI(message) {
+  var msg = JSON.parse(message.payloadString); 
+  var text = "";
+
+  msg["observations"].forEach(function(item, index) {
+  text += item["name"] + " AQI is " + item["aqi"] + " (" + item["condition"]  + ")<br />";
+  });
+  text +=  getTimeagostamp(msg["timestamp"]);
+  $('#aqi').html(text);
+  activateTimeago(); 
+}
+
+function onCamera(message, container) {
+  var msg = JSON.parse(message.payloadString); 
+
+  $(container + ' img').attr('src', 'data:' + msg['image']['mime_type'] + ';base64,' + msg['image']['data']);
+  $(container + ' time').remove();
+  $(container).append(getTimeagostamp(msg['timestamp']));
+  activateTimeago();
+}
+
+function onVendo(message) {
+  var msg = JSON.parse(message.payloadString); 
+
+  $('#vendo-temperature').text(msg['environment']['temperature']); 
+  $('#vendo-humidity').text(msg['environment']['humidity']); 
+}
+
+function onDremel(message) {
+  var msg = JSON.parse(message.payloadString);
+
+  $('#dremel-status').text(msg['status']['state']);
+
+  $('#dremel-filename').text(msg['job']['file']); 
+  if(msg['job']['progress']) 
+    $('#dremel-progress').text(msg['job']['progress'].toFixed(2)); 
+  $('#dremel-print-time').text(msg['job']['print_time']); 
+  $('#dremel-print-time-remaining').text(msg['job']['print_time_remaining']); 
+
+  if(msg['status']['state'] != 'idle')
+    $('#dremel-job').show();
+
+  $('#dremel-tool-temp').text(msg['temperatures']['tool0_actual']); 
+  $('#dremel-tool-temp-target').text(msg['temperatures']['tool0_target']); 
+  $('#dremel-bed-temp').text(msg['temperatures']['bed_actual']); 
+  $('#dremel-bed-temp-target').text(msg['temperatures']['bed_target']); 
+}
+
+function onOctoprint(message, id) {
+  var msg = JSON.parse(message.payloadString);
+
+  console.log('onOctoprint');
+
+  $('#' + id + ' .status').text(msg['status']['state']);
+
+  $('#' + id + ' .filename').text(msg['job']['file']); 
+  if(msg['job']['progress']) 
+    $('#' + id + ' .print-progress').text(msg['job']['progress'].toFixed(2)); 
+  $('#' + id + ' .print-time').text(msg['job']['print_time']); 
+  $('#' + id + ' .print-time-remaining').text(msg['job']['print_time_remaining']); 
+
+  if(msg['status']['state'] != 'idle')
+    $('#' + id + ' .job').show();
+
+  $('#' + id + ' .tool-temp').text(msg['temperatures']['tool0_actual']); 
+  $('#' + id + ' .tool-temp-target').text(msg['temperatures']['tool0_target']); 
+  $('#' + id + ' .bed-temp').text(msg['temperatures']['bed_actual']); 
+  $('#' + id + ' .bed-temp-target').text(msg['temperatures']['bed_target']); 
+}
+</script>

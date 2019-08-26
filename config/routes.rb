@@ -5,4 +5,6 @@ Rails.application.routes.draw do
 
   resources :cameras
   resources :users
+  resources :devices
+  resources :reports
 end
