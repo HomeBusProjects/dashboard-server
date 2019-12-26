@@ -1,24 +1,5 @@
-# README
+# Homebus Dashboard Server
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repo contains an experimental Homebus-based dashboard server.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The server is currently tailored to the needs of PDX Hackerspace and is likely to need 
