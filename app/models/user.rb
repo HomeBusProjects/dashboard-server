@@ -11,6 +11,7 @@ class User < ApplicationRecord
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
       user.name = auth.info.name
+      user.admin = (User.count == 0)
       user.save
 
       return user
