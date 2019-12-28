@@ -1,0 +1,43 @@
+                  <div id='<%= printer.uuid %>'>
+                    <h5>
+                        <a href='graph.html?uuid=<%= printer.uuid %>'>Dremel</a>
+                    </h5>
+                    <h6 id='status'></h6>
+                    <div id='job' style='display: none'>
+                        <ul>
+                            <li>Filename:
+                                <span id='filename'></span>
+                            </li>
+                            <li>Progress:
+                                <span id='progress'></span>%</li>
+                            <li>Time Remaining:
+                                <span id='print-time'></span>
+                                of
+                                <span id='print-time-remaining'></span>
+                                sec
+                            </li>
+                        </ul>
+                        <table class='table'>
+                            <tr>
+                                <th>temp</th>
+                                <th>actual</th>
+                                <th>target</th>
+                            </tr>
+                            <tr>
+                                <td>tool</td>
+                                <td>
+                                    <span id='tool-temp'></span>°C</td>
+                                <td>
+                                    <span id='tool-temp-target'></span>°C</td>
+                            </tr>
+                            <tr>
+                                <td>bed</td>
+                                <td>
+                                    <span id='bed-temp'></span>°C</td>
+                                <td>
+                                    <span id='bed-temp-target'></span>°C</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- #job -->
+                  </div>

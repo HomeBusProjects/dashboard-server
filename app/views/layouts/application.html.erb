@@ -11,12 +11,9 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
     <div class='container'>
-
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-
         <div class="nav-item dropdown">
           <a class="nav-brand dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             PDX Hackerspace Dashboard
@@ -32,29 +29,29 @@
             <div class="dropdown-divider"></div>
 	    <%= link_to 'Reports', reports_path, class: 'dropdown-item' %>
 <% end %>
-          </div>
-      </div>
+          </div><!-- .dropdown-menu -->
+      </div><!-- .nav-item-dropdown -->
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
       </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-	<li class="nav-item">
-	  <%= link_to "Cameras", cameras_path, class: 'nav-link' %>
-	</li>
-	<li class="nav-item">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+	  <li class="nav-item">
+	    <%= link_to "Cameras", cameras_path, class: 'nav-link' %>
+	  </li>
+	  <li class="nav-item">
 <% if user_signed_in? %>
-	<a class="nav-link" href="#">Logout</a>
+	    <a class="nav-link" href="#">Logout</a>
 <% else %>
-	<a class="nav-link" href="#">Login</a>
+	    <a class="nav-link" href="#">Login</a>
 <% end %>
-	</li>
-      </ul>
-    </div>
+	  </li>
+        </ul>
+      </div><!-- .collapse -->
     </nav>
 
-      <%= yield %>
+    <%= yield %>
     </div>
   </body>
 </html>
