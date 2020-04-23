@@ -8,6 +8,7 @@ gem 'pg'
 gem 'puma', '~> 4.3.3'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 4.1.20'
+gem "actionview", ">= 6.0.2.2"
 
 gem 'turbolinks', '~> 5.2.0'
 gem 'jbuilder', '~> 2.9.1'
