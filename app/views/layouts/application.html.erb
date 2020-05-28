@@ -22,11 +22,13 @@
 <% if current_user && can?(:manage, Device) %>
 	    <%= link_to 'Devices', devices_path, class: 'dropdown-item' %>
 <% end %>
+<% if true || current_user && can?(:manage, Template) %>
+	    <%= link_to 'Templates', templates_path, class: 'dropdown-item' %>
+<% end %>
 <% if current_user && can?(:manage, User) %>
 	    <%= link_to 'Users', users_path, class: 'dropdown-item' %>
 <% end %>
-<% if current_user && can?(:manage, Device) %>
-            <div class="dropdown-divider"></div>
+<% if false %>
 	    <%= link_to 'Reports', reports_path, class: 'dropdown-item' %>
 <% end %>
           </div><!-- .dropdown-menu -->
@@ -37,9 +39,6 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-	  <li class="nav-item">
-	    <%= link_to "Cameras", cameras_path, class: 'nav-link' %>
-	  </li>
 	  <li class="nav-item">
 <% if user_signed_in? %>
 	    <a class="nav-link" href="#">Logout</a>

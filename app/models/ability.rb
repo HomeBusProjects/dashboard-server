@@ -33,7 +33,7 @@ class Ability
 
     if user.admin?
       can :manage, Device
-#      can :manage, Report
+      can :manage, Template
       can :manage, User
     end
 
