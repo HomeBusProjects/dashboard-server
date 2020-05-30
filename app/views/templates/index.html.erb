@@ -6,8 +6,8 @@
   <thead>
     <tr>
       <th>DDC</th>
-      <th>Template</th>
       <th>Name</th>
+      <th>Template</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,10 +15,9 @@
   <tbody>
     <% @templates.each do |template| %>
       <tr>
-        <td><%= template.ddc %></td>
+        <td><%= link_to template.ddc, template %></td>
         <td><%= template.template %></td>
         <td><%= template.name %></td>
-        <td><%= link_to 'Show', template %></td>
         <td><%= link_to 'Edit', edit_template_path(template) %></td>
         <td><%= link_to 'Destroy', template, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -28,4 +27,4 @@
 
 <br>
 
-<%= link_to 'New Template', new_template_path %>
+<%= link_to 'New Template', new_template_path, class: 'btn btn-info' %>

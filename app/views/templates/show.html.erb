@@ -1,8 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Ddc:</strong>
+  <strong>DDC:</strong>
   <%= @template.ddc %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @template.name %>
 </p>
 
 <p>
@@ -10,11 +15,6 @@
   <pre>
 <%= @template.template %>
   </pre>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @template.name %>
 </p>
 
 <%= link_to 'Edit', edit_template_path(@template) %> |
