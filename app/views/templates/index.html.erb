@@ -16,8 +16,8 @@
     <% @templates.each do |template| %>
       <tr>
         <td><%= link_to template.ddc, template %></td>
-        <td><%= template.template %></td>
         <td><%= template.name %></td>
+        <td><%= template.template %></td>
         <td><%= link_to 'Edit', edit_template_path(template) %></td>
         <td><%= link_to 'Destroy', template, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
