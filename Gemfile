@@ -37,6 +37,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise', '>= 4.7.1'
 gem 'ginjo-omniauth-slack', require: 'omniauth-slack'
+gem 'omniauth-rails_csrf_protection', '~> 0.1'
 gem 'dotenv-rails'
 gem 'cancancan'
 
