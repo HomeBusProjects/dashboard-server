@@ -24,12 +24,12 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'mini_racer'
+#  gem 'mini_racer'
 end
 
 group :test do
   gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'
+#  gem 'selenium-webdriver'
 #  gem 'chromedriver-helper'
 end
 
