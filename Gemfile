@@ -47,4 +47,4 @@ gem 'cancancan'
 gem 'bootstrap', '>= 4.3.1'
 gem 'jquery-rails'
 gem "bootstrap_form", ">= 4.2.0"
-gem 'nokogiri',	'~> 1.13.4'
+gem 'nokogiri',	'~> 1.13.5'
